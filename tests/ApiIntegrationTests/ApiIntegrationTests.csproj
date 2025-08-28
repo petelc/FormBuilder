@@ -39,5 +39,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\FormBuilderAPI.csproj" />
   </ItemGroup>
+    
+  <ItemGroup>
+    <Folder Include="FormEndpoints\" />
+  </ItemGroup>
 
 </Project>

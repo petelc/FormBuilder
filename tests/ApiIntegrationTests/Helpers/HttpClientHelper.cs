@@ -1,6 +1,22 @@
+using System.Net.Http;
+using System.Net.Http.Headers;
+using static ApiIntegrationTests.ProgramTest;
+
 namespace ApiIntegrationTests.Helpers;
 
-public class HttpClientHelper
+internal static class HttpClientHelper
 {
-    
+    public static HttpClient GetNormalUserClient()
+    {
+        return CreateClient(ApiTokenHelper.GetNormalUserToken());
+    }
+
+    private static HttpClient CreateClient(string token)
+    {
+        
+        var client = NewClient;
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token);
+        return client;
+        
+    }
 }
